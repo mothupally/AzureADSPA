@@ -1,0 +1,19 @@
+﻿<div ng-init="populate()">
+    <p class="error">{{error}}</p>
+    <p>{{loadingMessage}}</p>
+    <div class="panel">
+        <h5>These items are retrieved from API to API communication by passing the Bearer token of webclient -> API1 -> API2</h5>
+        <br />
+
+        <table class="table table-striped" style="background-color:darkseagreen">
+            <tbody>
+                <tr data-ng-repeat="item in todoList">
+                    <td>
+                        <p data-ng-hide="item.edit">{{item.Description}}</p>
+                        <input data-ng-show="item.edit" type="text" data-ng-model="editInProgressTodo.Description" class="form-control" />                        
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
